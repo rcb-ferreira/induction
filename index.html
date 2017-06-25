@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Narrow Jumbotron Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://ssp-int.adcorp.net/content/bundle.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./css/custom.css" rel="stylesheet">
+
+    <script src="http://ssp-int.adcorp.net/scripts/bundle3.js"></script>
+
+  </head>
+
+  <body>
+
+    <div class="container" id="myWizard">  
+        
+        <div class="row page-header container center-block navbar-fixed-top" style="background-color:#fff;">
+            <h4>Tony's Tuna Introduction</h4>
+        </div>
+
+        <div class="center-block" style="padding-top: 8em;">
+            <div class="progress">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="5" style="width: 5%;">1 / 22</div>
+            </div>
+        
+            <div class="tab-content">
+                <div class="tab-pane fade in active" id="step1">
+                    
+                    <div class="well"> 
+                    
+                        <label>Security Question 1</label>
+                        <select class="form-control input-lg">
+                        <option value="What was the name of your first pet?">What was the name of your first pet?</option>
+                        <option value="Where did you first attend school?">Where did you first attend school?</option>
+                        <option value="What is your mother's maiden name?">What is your mother's maiden name?</option>
+                        <option value="What is your favorite car model?">What is your favorite car model?</option>
+                        </select>
+                        <br>
+                        <label>Enter Response</label>
+                        <input class="form-control input-lg">
+                        
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="step2">
+                    <object data="./files/rui-ferreira.pdf" type="application/pdf"  style="width:100%; height:30em;">
+                        <iframe src="https://docs.google.com/viewer?url=./files/rui-ferreira.pdf&embedded=true" style="width:100%; height:100%;" frameborder="0"></iframe>
+                    </object>
+                </div>
+                <div class="tab-pane fade" id="step3">
+                    <div class="well"> <h2>Step 3</h2> Add another step here..</div>
+                </div>
+                <div class="tab-pane fade" id="step4">
+                    <div class="well"> <h2>Step 4</h2> Add another almost done step here..</div>
+                </div>
+                <div class="tab-pane fade" id="step5">
+                    <div class="well"> <h2>Step 5</h2> You're Done!</div>
+                </div>
+                <div class="tab-pane fade" id="step6">
+                    <div class="well"> <h2>Step 6</h2> You're Done!</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="checkbox">
+            <label>
+                <input name="something" type="checkbox"> Check me out
+            </label>
+        </div> 
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="row panel-footer container center-block navbar-fixed-bottom">
+            <a href="#step2" class="btn btn-primary disabled" data-toggle="tab" role="tab" data-step="2">Continue</a>
+        </div>
+
+        <script type="text/javascript">
+
+            $(document).ready(function() {
+                var count = 2;
+                $('input[name=something]').click(function(event){
+                    $('.panel-footer .btn').removeClass('disabled');
+                })
+
+                $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+                    //update progress
+                    var percent = (parseInt(count) / 22) * 100;
+                    $('.progress-bar').css({width: percent + '%'});
+                    $('.progress-bar').text( count + " / 22");
+
+                    count += 1;
+                    $('.panel-footer .btn').attr('href', '#step'+count);
+                    $('.panel-footer .btn').attr('data-step', count);
+
+                    $('input[name=something]').prop('checked',false);
+                    $('.panel-footer .btn').addClass('disabled');
+                    //e.relatedTarget // previous tab
+                })
+            
+            });
+        </script>
+    </div> <!-- /container -->
+  </body>
+</html>
