@@ -26,30 +26,29 @@
     <div class="container" id="myWizard">  
         
         <div class="row page-header container center-block navbar-fixed-top" style="background-color:#fff;">
-            <h4>Tony's Tuna Introduction</h4>
+            <h4>Tony's Tuna Introduction <span class="small pull-right">Step 1 of 22</span></h4>
+
         </div>
 
         <div class="center-block" style="padding-top: 8em;">
-            <div class="progress">
+            <!--<div class="progress">
                 <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="5" style="width: 5%;">1 / 22</div>
-            </div>
+            </div>-->
         
             <div class="tab-content">
                 <div class="tab-pane fade in active" id="step1">
-                    
-                    <div class="well"> 
-                    
-                        <label>Security Question 1</label>
-                        <select class="form-control input-lg">
-                        <option value="What was the name of your first pet?">What was the name of your first pet?</option>
-                        <option value="Where did you first attend school?">Where did you first attend school?</option>
-                        <option value="What is your mother's maiden name?">What is your mother's maiden name?</option>
-                        <option value="What is your favorite car model?">What is your favorite car model?</option>
-                        </select>
-                        <br>
-                        <label>Enter Response</label>
-                        <input class="form-control input-lg">
-                        
+                    <div class="content-wrapper">
+                        <iframe src="https://www.slideshare.net/slideshow/embed_code/key/k1bxrSj8IDPRJ0"
+                            width="100%"
+                            height="100%"
+                            frameborder="0" 
+                            marginwidth="0" 
+                            marginheight="0" 
+                            scrolling="no" 
+                            class="slides"> 
+                        </iframe>
+                        <div class="inner-block-left">&nbsp;</div>
+                        <div class="inner-block-right">&nbsp;</div>
                     </div>
                 </div>
                 <div class="tab-pane fade" id="step2">
@@ -91,14 +90,14 @@
             $(document).ready(function() {
                 var count = 2;
                 $('input[name=something]').click(function(event){
-                    $('.panel-footer .btn').removeClass('disabled');
+                    $('.panel-footer .btn').toggleClass('disabled');
                 })
 
                 $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
                     //update progress
-                    var percent = (parseInt(count) / 22) * 100;
-                    $('.progress-bar').css({width: percent + '%'});
-                    $('.progress-bar').text( count + " / 22");
+                    // var percent = (parseInt(count) / 22) * 100;
+                    // $('.progress-bar').css({width: percent + '%'});
+                    $('.small').text( "Step " + count + " of 22");
 
                     count += 1;
                     $('.panel-footer .btn').attr('href', '#step'+count);
@@ -108,7 +107,6 @@
                     $('.panel-footer .btn').addClass('disabled');
                     //e.relatedTarget // previous tab
                 })
-            
             });
         </script>
     </div> <!-- /container -->
