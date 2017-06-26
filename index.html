@@ -33,7 +33,12 @@
             <div class="tab-content">
                 <div class="tab-pane fade in active" id="step1">
                     <div class="content-wrapper">
-                        <object data="" type="application/pdf"  width="100%" height="100%"></object>
+
+                        <object data="" type="application/pdf" width="100%" height="100%">
+                            <iframe src="" width="100%" height="100%" style="border: none;">
+                            This browser does not support PDFs. Please download the PDF to view it: <a href="" class="download">Download PDF</a>
+                            </iframe>
+                        </object>
 
                         <video width="100%" height="100%" controls>
                             <source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" type="video/mp4">
@@ -185,6 +190,8 @@
                         $('video').hide();
 
                         $('object').attr('data', basePath+inductions[(count-1)].path);
+                        $('iframe').attr('src', basePath+inductions[(count-1)].path);
+                        $('download').attr('href', basePath+inductions[(count-1)].path);
                         $('.policy-name').text(inductions[(count-1)].policy);
                     } else {
                         $('.tab-pane.active').removeClass('active in');
