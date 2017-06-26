@@ -198,7 +198,7 @@
         </div> 
         <div class="checkbox">
             <label>
-                <input name="something" type="checkbox"> I, Irakli Garske, declare that I have watched the Tony’s Tuna Induction presentation in its entirety and understand all content included in the presentation on June 20 2017 12:29PM
+                <input name="introductionCheck" type="checkbox"> I, Irakli Garske, declare that I have watched the Tony’s Tuna Induction presentation in its entirety and understand all content included in the presentation on June 20 2017 12:29PM
             </label>
         </div>
         <br>
@@ -214,7 +214,7 @@
 
             $(document).ready(function() {
                 var count = 2;
-                $('input[name=something]').click(function(event){
+                $('input[name=introductionCheck]').click(function(event){
                     $('.panel-footer .btn').toggleClass('disabled');
                 })
 
@@ -226,9 +226,14 @@
                     $('.panel-footer .btn').attr('href', '#step'+count);
                     $('.panel-footer .btn').attr('data-step', count);
 
-                    $('input[name=something]').prop('checked',false);
+                    $('input[name=introductionCheck]').prop('checked',false);
                     $('.panel-footer .btn').addClass('disabled');
                     //e.relatedTarget // previous tab
+
+                    if (count >= 23) {
+                        $('.checkbox').addClass('hide');
+                        $('.navbar-fixed-bottom').addClass('hide');
+                    }
                 })
             });
         </script>
