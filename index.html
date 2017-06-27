@@ -33,18 +33,14 @@
             <div class="tab-content">
                 <div class="tab-pane fade in active" id="step1">
                     <div class="content-wrapper">
-
-                        <object data="" type="application/pdf" width="100%" height="100%">
-                            <iframe src="" width="100%" height="100%" style="border: none;">
-                            This browser does not support PDFs. Please download the PDF to view it: <a href="" class="download">Download PDF</a>
-                            </iframe>
-                        </object>
+                        <iframe height="100%" width="100%" src=""> </iframe>
 
                         <video width="100%" height="100%" controls>
                             <source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" type="video/mp4">
                             Your browser does not support HTML5 video.
                         </video>
                     </div>
+
                     <div class="checkbox">
                         <label>
                             <input name="introductionCheck" type="checkbox"> I, Irakli Garske, declare that I have read and agreed to, the Tony’s Tuna <span class="policy-name"></span> on <span class="demo"></span>
@@ -72,7 +68,7 @@
 
             $(document).ready(function() {
                 var count = 2;
-                var basePath = '/Storage/Documents/TonysTuna/PDF/';
+                var basePath = '/files';
                 var inductions = [];
 
                 inductions = [
@@ -81,83 +77,83 @@
                         policy: false
                     },
                     {
-                        path: '_TTI-LSA-Induction-Overview.pdf',
+                        path: '/_TTI-LSA-Induction-Overview.htm',
                         policy: 'Induction Overview'
                     },
                     {
-                        path: 'Code of Conduct Policy-min.pdf',
+                        path: '/Code of Conduct Policy.htm',
                         policy: 'Code of Conduct Policy'
                     },
                     {
-                        path: 'Company Behaviour and Values Policy-min.pdf',
+                        path: '/Company Behaviour.htm',
                         policy: 'Company Behaviour and Values Policy'
                     },
                     {
-                        path: 'Confidentiality Policy-min.pdf',
+                        path: '/Confidentiality Policy-min.htm',
                         policy: 'Confidentiality Policy'
                     },
                     {
-                        path: 'Discipline Policy updated 2015.02-min.pdf',
+                        path: '/Discipline.htm',
                         policy: 'Discipline Policy'
                     },
                     {
-                        path: 'Drugs and Alcohol Procedure-min.pdf',
+                        path: '/Drug and Alcohol Procedure.htm',
                         policy: 'Drugs and Alcohol Procedure'
                     },
                     { 
-                        path: 'Equal Opportunity Policy-min.pdf',
+                        path: '/Equal Opportunity.htm',
                         policy: 'Equal Opportunity Policy'
                     },
                     { 
-                        path: 'Grievance Policy updated 2015.02-min.pdf',
+                        path: '/Grievance Policy.htm',
                         policy: 'Grievance Policy updated 2015.02'
                     },
                     { 
-                        path: 'Hazardous Manual Tasks Policy-min.pdf',
+                        path: '/Hazardous Manual Tasks Policy.htm',
                         policy: 'Hazardous Manual Tasks Policy'
                     },
                     { 
-                        path: 'Hi Visibility Clothing Policy-min.pdf',
+                        path: '/Hi Visibility Clothing.htm',
                         policy: 'Hi Visibility Clothing Policy'
                     },
                     { 
-                        path: 'Housekeeping Standard - Factory - Policy-min.pdf',
+                        path: '/Housekeeping Standard at the Factory.htm',
                         policy: 'Housekeeping Standard - Factory - Policy'
                     },
                     { 
-                        path: 'Personal Hygiene Policy-min.pdf',
+                        path: '/Personal Hygiene Policy.htm',
                         policy: 'Personal Hygiene Policy'
                     },
                     { 
-                        path: 'Personal Protective Equipment (PPE) Policy-min.pdf',
+                        path: '/Personal Hygiene Policy.htm',
                         policy: 'Personal Protective Equipment (PPE)'
                     },
                     { 
-                        path: 'Plant and Equipment Policy-min.pdf',
+                        path: '/Plant and Equipment Policy.htm',
                         policy: 'Plant and Equipment'
                     },
                     { 
-                        path: 'Privacy Policy-min.pdf',
+                        path: '/Privacy Policy.htm',
                         policy: 'Privacy Policy'
                     },
                     { 
-                        path: 'Quality Policy-min.pdf',
+                        path: '/Quality Policy.htm',
                         policy: 'Quality Policy'
                     },
                     { 
-                        path: 'Sexual Harassment Policy-min.pdf',
+                        path: '/Sexual Harassment Policy.htm',
                         policy: 'Sexual Harassment Policy'
                     },
                     { 
-                        path: 'Smoke Free Policy-min.pdf',
+                        path: '/Smoke Free Policy.htm',
                         policy: 'Smoke Free Policy'
                     },
                     { 
-                        path: 'Social Media Policy-min.pdf',
+                        path: '/Social Media Policy.htm',
                         policy: 'Social Media Policy'
                     },
                     {
-                        path: 'Telephone Policy updated 2015.02-min.pdf',
+                        path: '/Telephone Policy.htm',
                         policy: 'Telephone Policy'
                     }
                 ];
@@ -166,8 +162,8 @@
 
                 $('.fade.success').attr('id', (inductions.length + 1));
 
-                $('object').hide();
-                // $('source').attr('src', 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4');
+                $('iframe').hide();
+                $('source').attr('src', 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4');
                 $('.policy-name').text(inductions[0].policy);
 
                 // Toggle disable class for button
@@ -186,10 +182,9 @@
                     $('.small.stepper').text( "Step " + count + " / " + (inductions.length + 1));
 
                     if (count <= inductions.length) {
-                        $('object').show();
+                        $('iframe').show();
                         $('video').hide();
 
-                        $('object').attr('data', basePath+inductions[(count-1)].path);
                         $('iframe').attr('src', basePath+inductions[(count-1)].path);
                         $('download').attr('href', basePath+inductions[(count-1)].path);
                         $('.policy-name').text(inductions[(count-1)].policy);

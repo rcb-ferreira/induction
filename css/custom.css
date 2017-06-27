@@ -1,11 +1,27 @@
-.header-bt-margin {
-    margin-bottom: 0;
-}
 .tab-wrapper {
-    padding-top: 6em;
+    margin: 6em 0;
 }
 .content-wrapper {
     width:100%; 
-    height:35em;
-    border: 1px solid #323232;
+    height:30em;
+}
+.inner-block-right {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    height: 27px;
+    width: 160px;
+    background:#323232;
+}
+.inner-block-left {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    height: 27px;
+    width: 105px;
+    background:#323232;
+}
+
+.slides {
+    border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;
 }
