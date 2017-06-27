@@ -25,15 +25,15 @@
 
     <div id="myWizard">  
         
-        <div class="row panel-header container center-block navbar-fixed-top">
-            <h4 class="page-header header-bt-margin">Tony's Tuna Introduction <span class="small stepper pull-right">Step</span></h4>
+        <div class="container center-block navbar-fixed-top header-wrapper">
+            <h4 class="row page-header header-bt-margin">@ViewBag.InductionName <span class="small stepper pull-right">Step</span></h4>
         </div>
 
         <div class="center-block tab-wrapper">
             <div class="tab-content">
                 <div class="tab-pane fade in active" id="step1">
                     <div class="content-wrapper">
-                        <iframe height="100%" width="100%" src=""> </iframe>
+                        <iframe height="100%" width="100%" border="0" src=""> </iframe>
 
                         <video width="100%" height="100%" controls>
                             <source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" type="video/mp4">
@@ -43,7 +43,7 @@
 
                     <div class="checkbox">
                         <label>
-                            <input name="introductionCheck" type="checkbox"> I, Irakli Garske, declare that I have read and agreed to, the Tony’s Tuna <span class="policy-name"></span> on <span class="demo"></span>
+                            <input name="introductionCheck" type="checkbox"> I, @ViewBag.FullName, declare that I have read and agreed to, the Tony’s Tuna <span class="policy-name"></span> on <span class="demo"></span>
                         </label>
                     </div>
                 </div>
