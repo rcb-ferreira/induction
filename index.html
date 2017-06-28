@@ -33,12 +33,15 @@
             <div class="tab-content">
                 <div class="tab-pane fade in active" id="step1">
                     <div class="content-wrapper">
-                        <iframe height="100%" width="100%" border="0" src=""> </iframe>
-
-                        <video width="100%" height="100%" controls>
-                            <source src="~/Storage/Documents/TonysTuna/Video/TTI Company Overview.mp4" type="video/mp4">
-                            Your browser does not support HTML5 video.
-                        </video>
+                        <iframe 
+                            height="100%" 
+                            width="100%" 
+                            border="0" 
+                            src=""
+                            frameborder="1" 
+                            allowfullscreen> 
+                            <p>Loading...</p>
+                        </iframe>
                     </div>
 
                     <div class="checkbox">
@@ -68,93 +71,91 @@
 
             $(document).ready(function() {
                 var count = 2;
-                var basePath = '/Storage/Documents/TonysTuna/';
                 var inductions = [];
-
 
                 inductions = [
                     {
-                        path: '~/Storage/Documents/TonysTuna/Video/TTI Company Overview.mp4',
+                        path: 'https://www.youtube.com/embed/rWye--MBqsE',
                         policy: 'declare that I have watched the Tony’s Tuna Induction video in its entirety and understand all content included in the video'
                     },
                     {
-                        path: '/PDF/_TTI-LSA-Induction-Overview.htm',
+                        path: '/Storage/Documents/TonysTuna/PDF/_TTI-LSA-Induction-Overview.htm',
                         policy: 'declare that I have watched the Tony’s Tuna Induction presentation in its entirety and understand all content included in the presentation'
                     },
                     {
-                        path: '/PDF/Code of Conduct Policy.htm',
+                        path: '/Storage/Documents/TonysTuna/PDF/Code of Conduct Policy.htm',
                         policy: 'declare that I have read and agreed to, the Tony’s Tuna Code of Conduct Policy'
                     },
                     {
-                        path: '/PDF/Company Behaviour.htm',
+                        path: '/Storage/Documents/TonysTuna/PDF/Company Behaviour.htm',
                         policy: 'declare that I have read and agreed to, the Tony’s Tuna Company Behaviour and Values Policy'
                     },
                     {
-                        path: '/PDF/Confidentiality Policy-min.htm',
+                        path: '/Storage/Documents/TonysTuna/PDF/Confidentiality Policy-min.htm',
                         policy: 'declare that I have read and agreed to, the Tony’s Tuna Confidentiality Policy'
                     },
                     {
-                        path: '/PDF/Discipline.htm',
+                        path: '/Storage/Documents/TonysTuna/PDF/Discipline.htm',
                         policy: 'declare that I have read and agreed to, the Tony’s Tuna Discipline Policy'
                     },
                     {
-                        path: '/PDF/Drug and Alcohol Procedure.htm',
+                        path: '/Storage/Documents/TonysTuna/PDF/Drug and Alcohol Procedure.htm',
                         policy: 'declare that I have read and agreed to, the Tony’s Tuna Drugs and Alcohol Procedure'
                     },
                     { 
-                        path: '/PDF/Equal Opportunity.htm',
+                        path: '/Storage/Documents/TonysTuna/PDF/Equal Opportunity.htm',
                         policy: 'declare that I have read and agreed to, the Tony’s Tuna Equal Opportunity Policy'
                     },
                     { 
-                        path: '/PDF/Grievance Policy.htm',
+                        path: '/Storage/Documents/TonysTuna/PDF/Grievance Policy.htm',
                         policy: 'declare that I have read and agreed to, the Tony’s Tuna Grievance Policy updated 2015.02'
                     },
                     { 
-                        path: '/PDF/Hazardous Manual Tasks Policy.htm',
+                        path: '/Storage/Documents/TonysTuna/PDF/Hazardous Manual Tasks Policy.htm',
                         policy: 'declare that I have read and agreed to, the Tony’s Tuna Hazardous Manual Tasks Policy'
                     },
                     { 
-                        path: '/PDF/Hi Visibility Clothing.htm',
+                        path: '/Storage/Documents/TonysTuna/PDF/Hi Visibility Clothing.htm',
                         policy: 'declare that I have read and agreed to, the Tony’s Tuna Hi Visibility Clothing Policy'
                     },
                     { 
-                        path: '/PDF/Housekeeping Standard at the Factory.htm',
+                        path: '/Storage/Documents/TonysTuna/PDF/Housekeeping Standard at the Factory.htm',
                         policy: 'declare that I have read and agreed to, the Tony’s Tuna Housekeeping Standard - Factory - Policy'
                     },
                     { 
-                        path: '/PDF/Personal Hygiene Policy.htm',
+                        path: '/Storage/Documents/TonysTuna/PDF/Personal Hygiene Policy.htm',
                         policy: 'declare that I have read and agreed to, the Tony’s Tuna Personal Hygiene Policy'
                     },
                     { 
-                        path: '/PDF/Personal Hygiene Policy.htm',
+                        path: '/Storage/Documents/TonysTuna/PDF/Personal Hygiene Policy.htm',
                         policy: 'declare that I have read and agreed to, the Tony’s Tuna Personal Protective Equipment (PPE)'
                     },
                     { 
-                        path: '/PDF/Plant and Equipment Policy.htm',
+                        path: '/Storage/Documents/TonysTuna/PDF/Plant and Equipment Policy.htm',
                         policy: 'declare that I have read and agreed to, the Tony’s Tuna Plant and Equipment'
                     },
                     { 
-                        path: '/PDF/Privacy Policy.htm',
+                        path: '/Storage/Documents/TonysTuna/PDF/Privacy Policy.htm',
                         policy: 'declare that I have read and agreed to, the Tony’s Tuna Privacy Policy'
                     },
                     { 
-                        path: '/PDF/Quality Policy.htm',
+                        path: '/Storage/Documents/TonysTuna/PDF/Quality Policy.htm',
                         policy: 'declare that I have read and agreed to, the Tony’s Tuna Quality Policy'
                     },
                     { 
-                        path: '/PDF/Sexual Harassment Policy.htm',
+                        path: '/Storage/Documents/TonysTuna/PDF/Sexual Harassment Policy.htm',
                         policy: 'declare that I have read and agreed to, the Tony’s Tuna Sexual Harassment Policy'
                     },
                     { 
-                        path: '/PDF/Smoke Free Policy.htm',
+                        path: '/Storage/Documents/TonysTuna/PDF/Smoke Free Policy.htm',
                         policy: 'declare that I have read and agreed to, the Tony’s Tuna Smoke Free Policy'
                     },
                     { 
-                        path: '/PDF/Social Media Policy.htm',
+                        path: '/Storage/Documents/TonysTuna/PDF/Social Media Policy.htm',
                         policy: 'declare that I have read and agreed to, the Tony’s Tuna Social Media Policy'
                     },
                     {
-                        path: '/PDF/Telephone Policy.htm',
+                        path: '/Storage/Documents/TonysTuna/PDF/Telephone Policy.htm',
                         policy: 'declare that I have read and agreed to, the Tony’s Tuna Telephone Policy'
                     }
                 ];
@@ -162,9 +163,7 @@
                 $('.small.stepper').text( "Step 1 / " + (inductions.length + 1));
 
                 $('.fade.success').attr('id', (inductions.length + 1));
-
-                $('iframe').hide();
-                $('source').attr('src', '~/Storage/Documents/TonysTuna/Video/TTI Company Overview.mp4');
+                $('iframe').attr('src', inductions[0].path);
                 $('.policy-name').text(inductions[0].policy);
 
                 // Toggle disable class for button
@@ -178,21 +177,12 @@
                 })
 
                 $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-                    var code = e.keyCode || e.which;
-                    if (code == 13) {
-                        e.preventDefault();
-                        return false;
-                    }
-
                     //update progress
                     $('.small.stepper').text( "Step " + count + " / " + (inductions.length + 1));
 
                     if (count <= inductions.length) {
-                        $('iframe').show();
-                        $('video').hide();
-
-                        $('iframe').attr('src', basePath+inductions[(count-1)].path);
-                        $('download').attr('href', basePath+inductions[(count-1)].path);
+                        $('iframe').attr('src', inductions[(count-1)].path);
+                        $('download').attr('href', inductions[(count-1)].path);
                         $('.policy-name').text(inductions[(count-1)].policy);
                     } else {
                         $('.tab-pane.active').removeClass('active in');
@@ -212,7 +202,7 @@
                     //e.relatedTarget // previous tab
 
                     // Replace in class in order to initiate fade in
-                    setTimeout(function(){ $('.tab-pane.fade').addClass('in'); }, 500);
+                    setTimeout(function(){ $('.tab-pane.fade').addClass('in'); }, 800);
                     
                 })
 
