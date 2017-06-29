@@ -1,25 +1,38 @@
-.header-wrapper {
-    background-color: #FFF;
+body, 
+html,
+.main-wrapper,
+.tab-pane,
+.content-wrapper {
+    height: 100%;
+}
+.main-wrapper {
+    height: 100%;
+}
+.tab-content {
+    height: 55%;
+}
+.tab-wrapper {
+    margin-top: 12em;
+    height: 100%; 
 }
 .header-bt-margin {
     margin-bottom: 0px;
     padding: 0 15px;
 }
-.tab-wrapper {
-    margin: 6em 0;
+.header-wrapper {
+    background-color: #fff;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
 }
-.content-wrapper {
-    width:100%; 
-    height:30em;
-    background-color: #f4f4f4;
+.brand-header {
+    margin: 67px 0;
+}
+.brand-header-logo {
+    width: 150px;
+    position: absolute;
+    right: 0;
 }
 iframe {
     background-color: #fff;
-}
-
-/* Small devices (tablets, 768px and lower) */
-@media (max-width: 768px) { 
-    .content-wrapper {
-        height:20em;
-    }
 }

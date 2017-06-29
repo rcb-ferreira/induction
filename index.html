@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
+    <meta name="discription" content="">
     <meta name="author" content="">
 
     <title>Narrow Jumbotron Template for Bootstrap</title>
@@ -23,13 +22,15 @@
 
   <body class="container" >
 
-    <div id="myWizard">  
-        
-        <div class="container center-block navbar-fixed-top header-wrapper">
-            <h4 class="row page-header header-bt-margin">@ViewBag.InductionName <span class="small stepper pull-right">Step</span></h4>
+    <div class="main-wrapper" id="myWizard">    
+        <div class="container page-header center-block navbar-fixed-top header-wrapper text-center">
+            <img alt="Brand" class="brand-header-logo pull-right" src="/Storage/Documents/TonysTuna/images/TonyTuna.jpg">
+            <h4 class="brand-header">@ViewBag.InductionName</h4>
         </div>
 
         <div class="center-block tab-wrapper">
+            <span class="small stepper pull-right">Step</span>
+            <p class="discription">Welcome to tony's tuna induction.</p>
             <div class="tab-content">
                 <div class="tab-pane fade in active" id="step1">
                     <div class="content-wrapper">
@@ -46,170 +47,190 @@
 
                     <div class="checkbox">
                         <label>
-                            <input name="introductionCheck" type="checkbox"> I, @ViewBag.FullName, <span class="policy-name"></span> on <span class="time"></span>
+                            <input name="introductionCheck" type="checkbox"> I, <span class="policy-name"></span>.
                         </label>
                     </div>
                 </div>
-                <div class="tab-pane fade success" id="step2">
-                    <div class="well"> 
-                        <h2>
-                            <input type="submit" class="btn btn-lg btn-success" valeu="Submit"> to complete induction.
-                        </h2>
-                    </div>
+                <div class="tab-pane fade success text-center" id="step1">
+                    <h5>Thank you for completing your @ViewBag.InductionName.</h5>
+                    <h5>A copy of the Induction handbook has been emailed to you.</h5>
+                    <br>
+                    <br>
+                   <h5>Alternatively, you can download a copy here: <a href="/Storage/Documents/TonysTuna/">Tony’s Tuna Induction Handbook</a></h5>
                 </div>
             </div>
         </div>
-        <br>
-        <br>
-        <br>
-        <br>
         <div class="row panel-footer container center-block navbar-fixed-bottom">
-            <a href="#step2" class="btn btn-primary disabled" data-toggle="tab" role="tab" data-step="2">Continue</a>
+            <a href="#step2" class="btn btn-primary disabled pull-right" data-toggle="tab" role="tab" data-step="2">Continue</a>
+            <input type="submit" class="btn btn-success pull-right hide" value="Finish">
         </div>
+    </div>
 
-        <script type="text/javascript">
+    <script type="text/javascript">
 
-            $(document).ready(function() {
-                var count = 2;
-                var inductions = [];
+        $(document).ready(function() {
+            var count = 2;
+            var inductions = [];
 
-                inductions = [
-                    {
-                        path: 'https://www.youtube.com/embed/rWye--MBqsE',
-                        policy: 'declare that I have watched the Tony’s Tuna Induction video in its entirety and understand all content included in the video'
-                    },
-                    {
-                        path: '/Storage/Documents/TonysTuna/PDF/_TTI-LSA-Induction-Overview.htm',
-                        policy: 'declare that I have watched the Tony’s Tuna Induction presentation in its entirety and understand all content included in the presentation'
-                    },
-                    {
-                        path: '/Storage/Documents/TonysTuna/PDF/Code of Conduct Policy.htm',
-                        policy: 'declare that I have read and agreed to, the Tony’s Tuna Code of Conduct Policy'
-                    },
-                    {
-                        path: '/Storage/Documents/TonysTuna/PDF/Company Behaviour.htm',
-                        policy: 'declare that I have read and agreed to, the Tony’s Tuna Company Behaviour and Values Policy'
-                    },
-                    {
-                        path: '/Storage/Documents/TonysTuna/PDF/Confidentiality Policy-min.htm',
-                        policy: 'declare that I have read and agreed to, the Tony’s Tuna Confidentiality Policy'
-                    },
-                    {
-                        path: '/Storage/Documents/TonysTuna/PDF/Discipline.htm',
-                        policy: 'declare that I have read and agreed to, the Tony’s Tuna Discipline Policy'
-                    },
-                    {
-                        path: '/Storage/Documents/TonysTuna/PDF/Drug and Alcohol Procedure.htm',
-                        policy: 'declare that I have read and agreed to, the Tony’s Tuna Drugs and Alcohol Procedure'
-                    },
-                    { 
-                        path: '/Storage/Documents/TonysTuna/PDF/Equal Opportunity.htm',
-                        policy: 'declare that I have read and agreed to, the Tony’s Tuna Equal Opportunity Policy'
-                    },
-                    { 
-                        path: '/Storage/Documents/TonysTuna/PDF/Grievance Policy.htm',
-                        policy: 'declare that I have read and agreed to, the Tony’s Tuna Grievance Policy updated 2015.02'
-                    },
-                    { 
-                        path: '/Storage/Documents/TonysTuna/PDF/Hazardous Manual Tasks Policy.htm',
-                        policy: 'declare that I have read and agreed to, the Tony’s Tuna Hazardous Manual Tasks Policy'
-                    },
-                    { 
-                        path: '/Storage/Documents/TonysTuna/PDF/Hi Visibility Clothing.htm',
-                        policy: 'declare that I have read and agreed to, the Tony’s Tuna Hi Visibility Clothing Policy'
-                    },
-                    { 
-                        path: '/Storage/Documents/TonysTuna/PDF/Housekeeping Standard at the Factory.htm',
-                        policy: 'declare that I have read and agreed to, the Tony’s Tuna Housekeeping Standard - Factory - Policy'
-                    },
-                    { 
-                        path: '/Storage/Documents/TonysTuna/PDF/Personal Hygiene Policy.htm',
-                        policy: 'declare that I have read and agreed to, the Tony’s Tuna Personal Hygiene Policy'
-                    },
-                    { 
-                        path: '/Storage/Documents/TonysTuna/PDF/Personal Hygiene Policy.htm',
-                        policy: 'declare that I have read and agreed to, the Tony’s Tuna Personal Protective Equipment (PPE)'
-                    },
-                    { 
-                        path: '/Storage/Documents/TonysTuna/PDF/Plant and Equipment Policy.htm',
-                        policy: 'declare that I have read and agreed to, the Tony’s Tuna Plant and Equipment'
-                    },
-                    { 
-                        path: '/Storage/Documents/TonysTuna/PDF/Privacy Policy.htm',
-                        policy: 'declare that I have read and agreed to, the Tony’s Tuna Privacy Policy'
-                    },
-                    { 
-                        path: '/Storage/Documents/TonysTuna/PDF/Quality Policy.htm',
-                        policy: 'declare that I have read and agreed to, the Tony’s Tuna Quality Policy'
-                    },
-                    { 
-                        path: '/Storage/Documents/TonysTuna/PDF/Sexual Harassment Policy.htm',
-                        policy: 'declare that I have read and agreed to, the Tony’s Tuna Sexual Harassment Policy'
-                    },
-                    { 
-                        path: '/Storage/Documents/TonysTuna/PDF/Smoke Free Policy.htm',
-                        policy: 'declare that I have read and agreed to, the Tony’s Tuna Smoke Free Policy'
-                    },
-                    { 
-                        path: '/Storage/Documents/TonysTuna/PDF/Social Media Policy.htm',
-                        policy: 'declare that I have read and agreed to, the Tony’s Tuna Social Media Policy'
-                    },
-                    {
-                        path: '/Storage/Documents/TonysTuna/PDF/Telephone Policy.htm',
-                        policy: 'declare that I have read and agreed to, the Tony’s Tuna Telephone Policy'
-                    }
-                ];
+            inductions = [
+                {
+                    path: 'https://www.youtube.com/embed/rWye--MBqsE',
+                    policy: 'declare that I have watched the Tony’s Tuna Induction video in its entirety and understand all content included in the video',
+                    disc: 'Please view the following video for Tony’s Tuna as part of your induction.'
+                },
+                {
+                    path: '/Storage/Documents/TonysTuna/PDF/_TTI-LSA-Induction-Overview.htm',
+                    policy: 'declare that I have watched the Tony’s Tuna Induction presentation in its entirety and understand all content included in the presentation',
+                    disc: 'Please vie the following presentation for Tony’s Tuna as part of your indunction'
+                },
+                {
+                    path: '/Storage/Documents/TonysTuna/PDF/Code of Conduct Policy.htm',
+                    policy: 'declare that I have read and agreed to, the Tony’s Tuna Code of Conduct Policy',
+                    disc: 'Please read the following policies for Tony’s Tuna as part of your induction.'
+                },
+                {
+                    path: '/Storage/Documents/TonysTuna/PDF/Company Behaviour.htm',
+                    policy: 'declare that I have read and agreed to, the Tony’s Tuna Company Behaviour and Values Policy',
+                    disc: 'Please read the following policies for Tony’s Tuna as part of your induction.'
+                },
+                {
+                    path: '/Storage/Documents/TonysTuna/PDF/Confidentiality Policy-min.htm',
+                    policy: 'declare that I have read and agreed to, the Tony’s Tuna Confidentiality Policy',
+                    disc: 'Please read the following policies for Tony’s Tuna as part of your induction.'
+                },
+                {
+                    path: '/Storage/Documents/TonysTuna/PDF/Discipline.htm',
+                    policy: 'declare that I have read and agreed to, the Tony’s Tuna Discipline Policy',
+                    disc: 'Please read the following policies for Tony’s Tuna as part of your induction.'
+                },
+                {
+                    path: '/Storage/Documents/TonysTuna/PDF/Drug and Alcohol Procedure.htm',
+                    policy: 'declare that I have read and agreed to, the Tony’s Tuna Drugs and Alcohol Procedure',
+                    disc: 'Please read the following policies for Tony’s Tuna as part of your induction.'
+                },
+                { 
+                    path: '/Storage/Documents/TonysTuna/PDF/Equal Opportunity.htm',
+                    policy: 'declare that I have read and agreed to, the Tony’s Tuna Equal Opportunity Policy',
+                    disc: 'Please read the following policies for Tony’s Tuna as part of your induction.'
+                },
+                { 
+                    path: '/Storage/Documents/TonysTuna/PDF/Grievance Policy.htm',
+                    policy: 'declare that I have read and agreed to, the Tony’s Tuna Grievance Policy',
+                    disc: 'Please read the following policies for Tony’s Tuna as part of your induction.'
+                },
+                { 
+                    path: '/Storage/Documents/TonysTuna/PDF/Hazardous Manual Tasks Policy.htm',
+                    policy: 'declare that I have read and agreed to, the Tony’s Tuna Hazardous Manual Tasks Policy',
+                    disc: 'Please read the following policies for Tony’s Tuna as part of your induction.'
+                },
+                { 
+                    path: '/Storage/Documents/TonysTuna/PDF/Hi Visibility Clothing.htm',
+                    policy: 'declare that I have read and agreed to, the Tony’s Tuna Hi Visibility Clothing Policy',
+                    disc: 'Please read the following policies for Tony’s Tuna as part of your induction.'
+                },
+                { 
+                    path: '/Storage/Documents/TonysTuna/PDF/Housekeeping Standard at the Factory.htm',
+                    policy: 'declare that I have read and agreed to, the Tony’s Tuna Housekeeping Standard - Factory - Policy',
+                    disc: 'Please read the following policies for Tony’s Tuna as part of your induction.'
+                },
+                { 
+                    path: '/Storage/Documents/TonysTuna/PDF/Personal Hygiene Policy.htm',
+                    policy: 'declare that I have read and agreed to, the Tony’s Tuna Personal Hygiene Policy',
+                    disc: 'Please read the following policies for Tony’s Tuna as part of your induction.'
+                },
+                { 
+                    path: '/Storage/Documents/TonysTuna/PDF/Personal Protective Equipment (PPE).htm',
+                    policy: 'declare that I have read and agreed to, the Tony’s Tuna Personal Protective Equipment (PPE)',
+                    disc: 'Please read the following policies for Tony’s Tuna as part of your induction.'
+                },
+                { 
+                    path: '/Storage/Documents/TonysTuna/PDF/Plant and Equipment Policy.htm',
+                    policy: 'declare that I have read and agreed to, the Tony’s Tuna Plant and Equipment',
+                    disc: 'Please read the following policies for Tony’s Tuna as part of your induction.'
+                },
+                { 
+                    path: '/Storage/Documents/TonysTuna/PDF/Privacy Policy.htm',
+                    policy: 'declare that I have read and agreed to, the Tony’s Tuna Privacy Policy',
+                    disc: 'Please read the following policies for Tony’s Tuna as part of your induction.'
+                },
+                { 
+                    path: '/Storage/Documents/TonysTuna/PDF/Quality Policy.htm',
+                    policy: 'declare that I have read and agreed to, the Tony’s Tuna Quality Policy',
+                    disc: 'Please read the following policies for Tony’s Tuna as part of your induction.'
+                },
+                { 
+                    path: '/Storage/Documents/TonysTuna/PDF/Sexual Harassment Policy.htm',
+                    policy: 'declare that I have read and agreed to, the Tony’s Tuna Sexual Harassment Policy',
+                    disc: 'Please read the following policies for Tony’s Tuna as part of your induction.'
+                },
+                { 
+                    path: '/Storage/Documents/TonysTuna/PDF/Smoke Free Policy.htm',
+                    policy: 'declare that I have read and agreed to, the Tony’s Tuna Smoke Free Policy',
+                    disc: 'Please read the following policies for Tony’s Tuna as part of your induction.'
+                },
+                { 
+                    path: '/Storage/Documents/TonysTuna/PDF/Social Media Policy.htm',
+                    policy: 'declare that I have read and agreed to, the Tony’s Tuna Social Media Policy',
+                    disc: 'Please read the following policies for Tony’s Tuna as part of your induction.'
+                },
+                {
+                    path: '/Storage/Documents/TonysTuna/PDF/Telephone Policy.htm',
+                    policy: 'declare that I have read and agreed to, the Tony’s Tuna Telephone Policy',
+                    disc: 'Please read the following policies for Tony’s Tuna as part of your induction.'
+                }
+            ];
 
-                $('.small.stepper').text( "Step 1 / " + (inductions.length + 1));
+            $('.small.stepper').text( "Step 1 / " + (inductions.length + 1));
 
-                $('.fade.success').attr('id', (inductions.length + 1));
-                $('iframe').attr('src', inductions[0].path);
-                $('.policy-name').text(inductions[0].policy);
+            $('.fade.success').attr('id', (inductions.length + 1));
+            $('iframe').attr('src', inductions[0].path);
+            $('.policy-name').text(inductions[0].policy);
+            $('.discription').text(inductions[0].disc);
 
-                // Toggle disable class for button
-                $('input[name=introductionCheck]').click(function(event){
-                    $('.panel-footer .btn').toggleClass('disabled');
-                })
+            // Toggle disable class for button
+            $('input[name=introductionCheck]').click(function(event){
+                $('.panel-footer .btn').toggleClass('disabled');
+            })
 
-                // Remove in class in order to restart fade in
-                $('.btn-primary').click(function(event){
-                    $('.tab-pane.active').removeClass('in');
-                })
+            // Remove in class in order to restart fade in
+            $('.btn-primary').click(function(event){
+                $('.tab-pane.active').removeClass('in');
+            })
 
-                $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-                    //update progress
-                    $('.small.stepper').text( "Step " + count + " / " + (inductions.length + 1));
+            $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+                //update progress
+                $('.small.stepper').text( "Step " + count + " / " + (inductions.length + 1));
 
-                    if (count <= inductions.length) {
-                        $('iframe').attr('src', inductions[(count-1)].path);
-                        $('download').attr('href', inductions[(count-1)].path);
-                        $('.policy-name').text(inductions[(count-1)].policy);
-                    } else {
-                        $('.tab-pane.active').removeClass('active in');
-                        $('.tab-pane.success').addClass('active');
+                if (count <= inductions.length) {
+                    $('iframe').attr('src', inductions[(count-1)].path);
+                    $('download').attr('href', inductions[(count-1)].path);
+                    $('.policy-name').text(inductions[(count-1)].policy);
+                    $('.discription').text(inductions[(count-1)].disc);
+                } else {
+                    $('.tab-pane.active').removeClass('active in');
+                    $('.tab-pane.success').addClass('active');
+                    $('.tab-pane .btn-success').removeClass('hide');
 
-                        // Hide continue button
-                        $('.checkbox').addClass('hide');
-                        $('.navbar-fixed-bottom').addClass('hide');
-                    }
+                    // Hide continue button
+                    $('.checkbox').addClass('hide');
+                    $('.stepper').addClass('hide');
+                    $('.discription').addClass('hide');
+                    $('.navbar-fixed-bottom').addClass('hide');
+                }
 
-                    count += 1;
-                    $('.panel-footer .btn').attr('href', '#step'+count);
-                    $('.panel-footer .btn').attr('data-step', count);
+                count += 1;
+                $('.panel-footer .btn').attr('href', '#step'+count);
+                $('.panel-footer .btn').attr('data-step', count);
 
-                    $('input[name=introductionCheck]').prop('checked',false);
-                    $('.panel-footer .btn').addClass('disabled');
-                    //e.relatedTarget // previous tab
+                $('input[name=introductionCheck]').prop('checked',false);
+                $('.panel-footer .btn').addClass('disabled');
+                //e.relatedTarget // previous tab
 
-                    // Replace in class in order to initiate fade in
-                    setTimeout(function(){ $('.tab-pane.fade').addClass('in'); }, 800);
-                    
-                })
-
-                var d = new Date();
-                $(".time").text(d.toDateString());
-            });
-        </script>
-    </div> <!-- /container -->
+                // Replace in class in order to initiate fade in
+                setTimeout(function(){ $('.tab-pane.fade').addClass('in'); }, 800);
+                
+            })
+        });
+    </script>
   </body>
 </html>
